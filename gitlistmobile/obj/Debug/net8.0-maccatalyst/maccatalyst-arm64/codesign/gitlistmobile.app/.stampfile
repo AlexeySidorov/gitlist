@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/alexsidorov/Projects/gitlist/gitlistmobile/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/alexsidorov/Projects/gitlist/gitlistmobile/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/gitlistmobile.app
