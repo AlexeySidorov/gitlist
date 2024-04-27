@@ -3,23 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gitlistmobile", "gitlistmobile\gitlistmobile.csproj", "{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gitlistmobile", "gitlistmobile\gitlistmobile.csproj", "{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gitlist.core", "gitlist.core\gitlist.core.csproj", "{E5963CFA-BD5E-4059-BEBA-EB74A53C5B57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gitlist.core", "gitlist.core\gitlist.core.csproj", "{E5963CFA-BD5E-4059-BEBA-EB74A53C5B57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gitlist.domain", "gitlist.domain\gitlist.domain.csproj", "{B83782ED-DEEF-4875-9702-C4F61489202D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gitlist.domain", "gitlist.domain\gitlist.domain.csproj", "{B83782ED-DEEF-4875-9702-C4F61489202D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gitlist.views", "gitlist.views\gitlist.views.csproj", "{1EAD9B08-B939-4EDF-9FF6-73A7253A11BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gitlist.data", "gitlist.data\gitlist.data.csproj", "{2BD4F656-637D-46D9-81B6-AE9C2D3B3EC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECAC9E25-81F8-48B3-945A-26FF12C3EF57}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E5963CFA-BD5E-4059-BEBA-EB74A53C5B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +32,19 @@ Global
 		{B83782ED-DEEF-4875-9702-C4F61489202D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B83782ED-DEEF-4875-9702-C4F61489202D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B83782ED-DEEF-4875-9702-C4F61489202D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EAD9B08-B939-4EDF-9FF6-73A7253A11BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EAD9B08-B939-4EDF-9FF6-73A7253A11BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EAD9B08-B939-4EDF-9FF6-73A7253A11BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EAD9B08-B939-4EDF-9FF6-73A7253A11BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD4F656-637D-46D9-81B6-AE9C2D3B3EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD4F656-637D-46D9-81B6-AE9C2D3B3EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD4F656-637D-46D9-81B6-AE9C2D3B3EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD4F656-637D-46D9-81B6-AE9C2D3B3EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {519146D8-5133-4164-826F-7477725259F8}
 	EndGlobalSection
 EndGlobal

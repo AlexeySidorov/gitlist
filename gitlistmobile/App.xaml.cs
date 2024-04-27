@@ -1,24 +1,25 @@
 ﻿using System.Reflection;
-using System.Linq;
+using gitlist.core;
 using gitlist.domain;
 
 namespace gitlistmobile;
 
 public partial class App : Application
 {
-	public App()
-	{
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
 
-		MainPage = new AppShell();
-	}
+        MainPage = new AppShell();
+    }
 
     protected async override void OnStart()
     {
-		  //Создание Базы данных
-          await Task.Run(() => new DataBase().
-		  		CreateDataBase([typeof(UserEntity).GetTypeInfo().Assembly]));
+ 
+        //Создание Базы данных
+        await Task.Run(() => new DataBase().
+                  CreateTables(ServiceContainer.Current.DbPath, [typeof(UserEntity).GetTypeInfo().Assembly]));
 
-		  base.OnStart();
+        base.OnStart();
     }
 }
