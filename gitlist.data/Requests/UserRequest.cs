@@ -5,15 +5,10 @@ namespace gitlist.data;
 
 public class UserRequest
 {
-	[JsonProperty("login")]
-	public string? Account { get; set; }
-	[JsonProperty("avatar_url")]
-	public string? AvatarUrl { get; set; }
+	public string Login { get; set; }
+	public string Avatar_Url { get; set; }
 	public string? Type { get; set; }
-	[JsonProperty("name")]
-	public string? FullUserName { get; set; }
-	[JsonProperty("public_repos")]
-	public int RepositoriesCount { get; set; }
+	public string Name { get; set; }
 }
 
 public static class UserRequestExtens
@@ -22,7 +17,7 @@ public static class UserRequestExtens
 	{
 		if (entity == null) return null;
 
-		return new UserEntity(entity.Account, entity.FullUserName, entity.AvatarUrl, 
-				entity.RepositoriesCount, entity.Type );
+		return new UserEntity(entity.Login, entity.Name, entity.Avatar_Url, 
+				0, entity.Type );
 	}
 }

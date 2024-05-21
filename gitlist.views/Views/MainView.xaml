@@ -4,13 +4,24 @@
              xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:view="clr-namespace:gitlist.views.Base"
              xmlns:vm="clr-namespace:gitlist.views.ViewModels"
+             xmlns:model="clr-namespace:gitlist.domain.Models;assembly=gitlist.domain"
+             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
              x:Class="gitlist.views.Views.MainView"
              x:DataType="vm:MainViewModel"
              x:TypeArguments="vm:MainViewModel">
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding Items}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  RemainingItemsThreshold="1" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand.ExecutionTask.Status}"
+                      android:ListView.IsFastScrollEnabled="true" IsVisible="{Binding DataVisible, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:RepositoryModel">
+                    <TextCell Text="{Binding Name}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-             <Frame>
-                <SearchBar Placeholder="Search items..." />
-             </Frame>
+        <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="14" Text="Список репозитороиев пуст" IsVisible="{Binding VisibleEmptyMessage, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"/>
+        <ActivityIndicator VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="Purple" HeightRequest="50" WidthRequest="50" IsRunning="{Binding IsProgressActive}" IsVisible="{Binding VisibleProgress, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"/>
 
+    </StackLayout>
 
 </view:BaseView>

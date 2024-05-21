@@ -5,8 +5,7 @@ namespace gitlist.data.Services;
 
 public interface IUserService
 {
-    Task<UserModel?> GetUserInfo(string name);
-
+    Task<UserModel?> GetUserInfo(string? name);
     Task<string?> GetCurrentUserAccount();
 }
 
@@ -26,14 +25,16 @@ public class UserService : IUserService
         return await _userRepository.GetCurrentUser();
     }
 
-    public async Task<UserModel?> GetUserInfo(string name)
+    public async Task<UserModel?> GetUserInfo(string? name)
     {
-        if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name)) return null;
+        var localUserName = name;
+        if (string.IsNullOrEmpty(localUserName) || string.IsNullOrWhiteSpace(localUserName))
+            return await _userRepository.GetCurrentUserAccount();
 
-        var localUser = await _userRepository.GetUserInfo(name);
+        var localUser = await _userRepository.GetUserInfo(localUserName);
         if (localUser == null)
         {
-            var remouteUser = await _restApiService.Request().GetUserByName(name);
+            var remouteUser = await _restApiService.Request().GetUserByName(localUserName);
             if (remouteUser == null) return null;
 
             var userEntity = remouteUser.UserRequestToUserEntity();

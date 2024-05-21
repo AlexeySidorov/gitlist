@@ -7,6 +7,7 @@ using gitlist.data.Services;
 using gitlist.data.Repositories;
 using gitlist.domain;
 using gitlist.core.DataBaseService;
+using gitlist.domain.DbModels;
 
 namespace gitlistmobile;
 
@@ -41,6 +42,7 @@ public static class MauiProgram
         builder.Services.AddTransient<IUserService, UserService>();
         builder.Services.AddTransient<IUserRepository, UserRepository>();
         builder.Services.AddTransient<IAsyncRepository<UserEntity>, SqLiteAsyncRepository<UserEntity>>();
+        builder.Services.AddTransient<IAsyncRepository<RepositoryEntity>, SqLiteAsyncRepository<RepositoryEntity>>();
         builder.Services.AddTransient<IPublicUserRepositoryService, PublicUserRepositoryService>();
         builder.Services.AddTransient<IPublicUserRepositories, PublicUserRepositories>();
 
@@ -63,9 +65,10 @@ public static class MauiProgram
         ServiceContainer.Current.Initialize(services);
         ServiceContainer.Current.BaseApiUrl = "https://api.github.com/";
         ServiceContainer.Current.DbName = "gitlist.db";
+        ServiceContainer.Current.CurrentUser = "AlexeySidorov";
 
         var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        ServiceContainer.Current.DbPath = Path.Combine(documentsPath, ServiceContainer.Current.DbName); 
+        ServiceContainer.Current.DbPath = Path.Combine(documentsPath, ServiceContainer.Current.DbName);
     }
 
     static void RegisterViewsAndViewModels(in IServiceCollection services)

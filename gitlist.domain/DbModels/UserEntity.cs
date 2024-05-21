@@ -34,6 +34,6 @@ public static class UserEnityExtension {
     public static UserModel? EntityToUserModel(this UserEntity entity) {
         if(entity == null) return null;
 
-        return new UserModel(entity.FullUserName, entity.AvatarUrl);
+        return new UserModel(entity.Id, entity.FullUserName, entity.AvatarUrl);
     }
 }

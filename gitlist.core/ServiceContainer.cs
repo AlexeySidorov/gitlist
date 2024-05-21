@@ -22,4 +22,6 @@ public class ServiceContainer
     public string DbName { get; set; }
 
     public string DbPath { get; set; }
+
+    public string CurrentUser { get; set; }
 }
